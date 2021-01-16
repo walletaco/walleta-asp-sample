@@ -1,0 +1,81 @@
+﻿@model Walleta.Cpg.SampleCode.Models.SimplePayModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <title>فروشگاه آنلاین</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/normalize.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/milligram.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/styles.css")">
+</head>
+<body>
+
+    <section id="top-line"></section>
+
+    <section class="container" id="invoice">
+        <h3 class="title">
+            <a href="/">فروشگاه آنلاین</a>
+        </h3>
+
+        <p class="description">صفحه تست درگاه پرداخت اعتباری والتا.</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>تصویر</th>
+                    <th>کالا</th>
+                    <th class="text-left">تعداد</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img src="@Url.Content("~/assets/img/product-01.jpg")" alt=""></td>
+                    <td>گوشی موبایل هوآوی مدل Y9s STK-L21 دو سیم کارت ظرفیت 128 گیگابایت</td>
+                    <td class="text-left">۱ عدد</td>
+                </tr>
+                <tr>
+                    <td><img src="@Url.Content("~/assets/img/product-02.jpg")" alt=""></td>
+                    <td>شارژر همراه شیاومی مدل PLM09ZM ظرفیت 10000 میلی آمپر ساعت</td>
+                    <td class="text-left">۱ عدد</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form method="POST">
+
+            <div class="form-group">
+                <label for="Amount">مبلغ قابل پرداخت</label>
+                @Html.ValidationMessageFor(m => m.Amount)
+                @Html.TextBoxFor(m => m.Amount)
+            </div>
+
+
+            <div class="form-group">
+                <label for="NationalCode">کد ملی پرداخت کننده</label>
+                @Html.ValidationMessageFor(m => m.NationalCode)
+                @Html.TextBoxFor(m => m.NationalCode)
+            </div>
+
+            <div class="form-group">
+                <label for="Mobile">شماره موبایل پرداخت کننده</label>
+                @Html.ValidationMessageFor(m => m.Mobile)
+                @Html.TextBoxFor(m => m.Mobile)
+            </div>
+            <div class="form-group">
+                <div>&nbsp;</div>
+                <input class="button button-outline" type="submit" value="پرداخت">
+            </div>
+        </form>
+        <div style="width:100%">
+            @Html.ValidationSummary()
+        </div>
+    </section>
+    
+</body>
+</html>

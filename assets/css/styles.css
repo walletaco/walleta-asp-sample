@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir.eot');
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir.woff2') format('woff2'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: Vazir, sans-serif;
+    font-size: 1.6em;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+    direction: rtl;
+    text-align: right;
+    background-color: #F4F5F6;
+}
+
+a {
+    color: #007bff;
+}
+
+/*
+ * Helpers
+ */
+.text-left {
+    text-align: left;
+}
+
+/*
+ * Form
+ */
+form {
+    margin-bottom: 0;
+}
+
+.button,
+button,
+input[type='button'],
+input[type='reset'],
+input[type='submit'] {
+    font-family: Vazir, sans-serif;
+    background-color: #007bff;
+    border: 0.1rem solid #007bff;
+    color: #fff;
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+    .button.button-outline,
+    button.button-outline,
+    input[type='button'].button-outline,
+    input[type='reset'].button-outline,
+    input[type='submit'].button-outline {
+        color: #007bff;
+    }
+
+/*
+ * Table
+ */
+td,
+th {
+    text-align: right;
+}
+
+/*
+ * Invoice
+ */
+#invoice {
+    margin-top: 30px;
+}
+
+.description {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+.form-group {
+    width: 50%;
+    float: right;
+    padding: 15px;
+}
+
+.field-validation-error {
+    color: red;
+    display:inline;
+}
+
+.field-validation-error:before {
+    content: '('
+}
+
+.field-validation-error:after {
+    content: ')'
+}
+label{
+    display:inline;
+}

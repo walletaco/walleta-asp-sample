@@ -1,0 +1,48 @@
+﻿@model Walleta.Cpg.SampleCode.WalletaPayment.Models.WalletaVerifyResponseModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <title>فروشگاه آنلاین</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/normalize.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/milligram.min.css")">
+    <link rel="stylesheet" href="@Url.Content("~/assets/css/styles.css")">
+</head>
+<body>
+
+    <section class="container" id="invoice">
+        <h3 class="title">
+            <a href="/">فروشگاه آنلاین</a>
+        </h3>
+
+        <p class="description">صفحه تست درگاه پرداخت اعتباری والتا.</p>
+
+        @if (Model == null)
+        {
+            @Html.ValidationSummary()
+        }
+        else
+        {
+            <div>
+                <h3>JsonResult</h3>
+                <p>
+                    @ViewData["VerifyJsonResponse"]
+                </p>
+            </div>
+            <div>
+                <p>وضعیت: @Html.Raw(Model.is_paid == true ? "تراکنش موفق" : "تراکنش ناموفق")</p>
+                <p>کد وضعیت: @Model.type</p>
+                <p>پیام: @Model.message</p>
+            </div>
+        }
+
+    </section>
+
+</body>
+</html>
